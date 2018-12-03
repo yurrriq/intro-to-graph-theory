@@ -1,11 +1,11 @@
 .PHONY: all
 
 ifeq (,$(value out))
-.PHONY: doc
+.PHONY: docs
 
-all: doc
+all: docs
 
-doc:
+docs:
 	@ install -m755 $$(nix-build -A drv --no-out-link)/* -Dt $@/
 else
 .PHONY: clean clobber watch
