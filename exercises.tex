@@ -15,6 +15,11 @@
 \usepackage{fancyvrb}
 \fvset{fontsize=\normalsize}
 
+\usepackage[xindy]{glossaries}
+\makeglossaries
+\input{glossary}
+\renewcommand*{\glstextformat}[1]{\textsl{#1}}
+
 %% \usepackage{makeidx}
 %% \makeindex
 
@@ -92,9 +97,9 @@
   would have to be a member of itself, which violates the axiomatic definition
   of a set.
 
-\item
+\item The first five \glspl{path graph}.
   \begin{figure*}
-    \begin{tikzpicture}[scale=.5]
+    \begin{tikzpicture}[scale=.4]
       \GraphInit[vstyle=Simple]
 
       \begin{scope}
@@ -102,22 +107,24 @@
         \draw (1,-1.5) node {$P_{2}$};
       \end{scope}
 
-      \begin{scope}[xshift=4cm]
+      \begin{scope}[xshift=5cm]
         \grPath[RA=2]{3}
         \draw (2,-1.5) node {$P_{3}$};
       \end{scope}
 
-      \begin{scope}[xshift=10cm]
+      \begin{scope}[xshift=12cm]
         \grPath[RA=2]{4}
         \draw (3,-1.5) node {$P_{4}$};
       \end{scope}
 
-      \begin{scope}[yshift=-3cm]
+      %% \begin{scope}[yshift=-3cm]
+      \begin{scope}[xshift=21cm]
         \grPath[RA=2]{5}
         \draw (4,-1.5) node {$P_{5}$};
       \end{scope}
 
-      \begin{scope}[yshift=-3cm,xshift=10cm]
+      %% \begin{scope}[yshift=-3cm,xshift=10cm]
+      \begin{scope}[xshift=32cm]
         \grPath[RA=2]{6}
         \draw (5,-1.5) node {$P_{6}$};
       \end{scope}
@@ -133,12 +140,12 @@
   $\hfill\square$
 
   \marginnote[-6em]{%
-    The number of edges in a {\em path graph} $P_{v}$, where $v \ge 2$, is
+    The number of edges in a \gls{path graph} $P_{v}$, where $v \ge 2$, is
     given by the formula $e = v - 1$.%
   }
-  \newpage
+  \pagebreak
 
-\item
+\item The first five \glspl{wheel graph}.
   \begin{figure*}
     \begin{tikzpicture}[scale=.5]
       \GraphInit[vstyle=Simple]
@@ -189,8 +196,8 @@
   $\hfill\square$
 
   \marginnote[-11em]{%
-    The number of edges in {\em the wheel graph on $v$ vertices} $W_{v}$, where
-    $v \ge 4$, is given by the formula $e = 2(v - 1)$.%
+    The number of edges in the \gls{wheel graph} on $v$ vertices $W_{v}$,
+  where $v \ge 4$, is given by the formula $e = 2(v - 1)$.%
   }
   \newpage
 
@@ -201,19 +208,22 @@
     &= (v-1) + (v-2) + ... + (v - (v-1)) \\
     &= 1 + 2 + ... (v-1)
   \end{align*}
-
-  Imagine drawing $K_{v}$ by joining vertex $1$ to vertices $2$ through $v$,
-  creating $v-1$ edges; then joining vertex $2$ to vertices $3$ through $v$,
-  creating $v-2$ edges; and so on, i.e.
-  $(v - 1) + (v - 2) + ... + (v - (v - 1))$, or equivalently,
-  $1 + 2 + ... + (v - 1)$.
   $\hfill\square$
+
+  \marginnote[-7em]{%
+    Imagine drawing $K_{v}$ by joining vertex $1$ to vertices $2$ through $v$,
+    creating $v-1$ edges; then joining vertex $2$ to vertices $3$ through $v$,
+    creating $v-2$ edges; and so on, i.e.
+    $(v - 1) + (v - 2) + ... + (v - (v - 1))$, or equivalently,
+    $1 + 2 + ... + (v - 1)$.%
+  }
 
   \item \todo{p57}
 \end{enumerate}
 
-%% \backmatter
+\backmatter
 
-%% \printindex
+\phantomsection
+\printglossaries
 
 \end{document}

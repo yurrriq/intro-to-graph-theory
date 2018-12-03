@@ -19,19 +19,25 @@ with import nixpkgs {
       xelatex = super.texlive.combine {
         inherit (super.texlive) scheme-small
           braket
+          datatool
           ebproof
+          glossaries
           hardwrap
           latexmk
           # mathpazo
+          mfirstuc
           # microtype
           # palatino
+          substr
           titlesec
           tkz-base
           tkz-berge
           tkz-graph
           todonotes
           tufte-latex
-          xetex;
+          xetex
+          xindy
+          xfor;
       };
     })
   ];

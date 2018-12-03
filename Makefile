@@ -27,5 +27,5 @@ clobber:
 	@ latexmk -C
 
 watch:
-	@ latexmk ${LATEXMKFLAGS} -pvc -new-viewer-
+	@ latexmk ${LATEXMKFLAGS} -pvc -new-viewer- exercises
 endif
