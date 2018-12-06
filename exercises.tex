@@ -199,7 +199,6 @@
     The number of edges in the \gls{wheel graph} on $v$ vertices $W_{v}$,
   where $v \ge 4$, is given by the formula $e = 2(v - 1)$.%
   }
-  \newpage
 
 \item
   \begin{align*}
@@ -218,7 +217,86 @@
     $1 + 2 + ... + (v - 1)$.%
   }
 
-  \item \todo{p57}
+  \item Let $G$ be a graph with $v$ vertices and $e$ edges. In terms of $v$ and
+    $e$, $\overline{G}$ has $(1/2)v(v-1) - e$ edges.
+
+    \newpage
+
+  \item \label{ex:9} If a graph $G$ has $v=6$ then $G$ or $\overline{G}$
+    (possibly both) has a subgraph isomorphic to $K_{3}$.
+
+    In the graph $G$ or $\overline{G}$ there exists a vertex $a$ of degree three
+    or more. Let there be three adjacent vertices $b$, $c$, and $d$. If any of
+    the edges $\Set{b,c}$, $\Set{b,d}$, or $\Set{c,d}$ are present in the graph,
+    then the graph contains a subgraph isomorphic to $K_{3}$. If none of those
+    edges is present, then they are all present in the other graph, which thus
+    contains a subgraph isomorphic to $K_{3}$.
+
+    \begin{figure}
+      \begin{tikzpicture}[scale=.8]
+        \GraphInit[vstyle=Simple]
+        \begin{scope}[xshift=3.5cm]
+          \Vertices{circle}{a,b,c,d,e,f}
+          \Edge(a)(d)
+          \SetUpEdge[color=purple,style={ultra thick}]
+          \Edge(a)(b) \Edge(a)(c) \Edge(b)(c)
+        \end{scope}
+
+        \begin{scope}[xshift=7cm]
+          \Vertices{circle}{a,b,c,d,e,f}
+          \Edge(a)(c)
+          \SetUpEdge[color=purple,style={ultra thick}]
+          \Edge(a)(b) \Edge(a)(d) \Edge(b)(d)
+        \end{scope}
+
+        \begin{scope}[xshift=10.5cm]
+          \Vertices{circle}{a,b,c,d,e,f}
+          \Edge(a)(b)
+          \SetUpEdge[color=purple,style={ultra thick}]
+          \Edge(a)(c) \Edge(a)(d) \Edge(c)(d)
+        \end{scope}
+
+        \begin{scope}[xshift=14cm]
+          \Vertices{circle}{a,b,c,d,e,f}
+          \Edge(a)(b) \Edge(a)(c) \Edge(a)(d)
+          \SetUpEdge[color=purple,style={ultra thick}]
+          \Edge(b)(c) \Edge(b)(d) \Edge(c)(d)
+        \end{scope}
+      \end{tikzpicture}
+    \end{figure}
+
+    \item From the proof in \hyperref[ex:9]{Exercise~\ref{ex:9}}, it follows
+      that in any graph of degree $6$ there exists a subgraph $H$, such that
+      either $H$ or $\overline{H}$ is isomorphic to $K_{3}$. Equivalently, in
+      any gathering of six people (a graph $G$ with $v=6$) there are either
+      three people who are mutually acquainted (a subgraph isomorphic to
+      $K_{3}$) or three people who are mutually unacquainted (a subgraph whose
+      complement is isomorphic to $K_{3}$).
+
+    \item
+      \begin{align}
+        2\abs{\emptyset} &= \sum_{v \in V} deg(v) = 0 \tag{BC} \\
+        G(V,E) \to 2\abs{E} &= \sum_{v \in V} deg(v) \tag{IH} \\
+        H(V^{\prime}, E^{\prime}), \abs{E^{\prime}} &= \abs{E} + 1 \\
+        \exists\ H_{0}(V^{\prime}, E^{\prime}_{0}), \abs{E^{\prime}_{0}} &= \abs{E} \\
+        2\abs{E^{\prime}_{0}} &= \sum_{v \in V^{\prime}} deg(v) \tag{by IH}\\
+        H &\cong (V^{\prime}, E_{0}^{\prime} \cup \Set{e}), e \not\in E_{0}^{\prime} \\
+        \sum_{v \in V^{\prime}} deg(v) + 2 &= 2\abs{E} \\
+        2\abs{E} + 2 = 2(\abs{E} + 1) &= \sum_{v \in V^{\prime}} deg(v)
+      \end{align}
+      $\hfill\square$
+
+    \item
+      \begin{enumerate}[a)]
+      \item
+        \begin{align*}
+          (4 \times 3) + (2 \times 5) + (2 \times 6) + (1 \times 8) &= 2e \\
+          12 + 10 + 12 + 8 &= 2e \\
+          21 &= e
+        \end{align*}
+      \item $(7 \times 3) = 2e \to e \not\in \mathbb{Q}$
+      \end{enumerate}
+    \item \todo[inline]{p57}
 \end{enumerate}
 
 \backmatter
