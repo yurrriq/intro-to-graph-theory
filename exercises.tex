@@ -235,28 +235,28 @@
     \begin{figure}
       \begin{tikzpicture}[scale=.8]
         \GraphInit[vstyle=Simple]
-        \begin{scope}[xshift=3.5cm]
+        \begin{scope}
           \Vertices{circle}{a,b,c,d,e,f}
           \Edge(a)(d)
           \SetUpEdge[color=purple,style={ultra thick}]
           \Edge(a)(b) \Edge(a)(c) \Edge(b)(c)
         \end{scope}
 
-        \begin{scope}[xshift=7cm]
+        \begin{scope}[xshift=3.5cm]
           \Vertices{circle}{a,b,c,d,e,f}
           \Edge(a)(c)
           \SetUpEdge[color=purple,style={ultra thick}]
           \Edge(a)(b) \Edge(a)(d) \Edge(b)(d)
         \end{scope}
 
-        \begin{scope}[xshift=10.5cm]
+        \begin{scope}[xshift=7cm]
           \Vertices{circle}{a,b,c,d,e,f}
           \Edge(a)(b)
           \SetUpEdge[color=purple,style={ultra thick}]
           \Edge(a)(c) \Edge(a)(d) \Edge(c)(d)
         \end{scope}
 
-        \begin{scope}[xshift=14cm]
+        \begin{scope}[xshift=10.5cm]
           \Vertices{circle}{a,b,c,d,e,f}
           \Edge(a)(b) \Edge(a)(c) \Edge(a)(d)
           \SetUpEdge[color=purple,style={ultra thick}]
