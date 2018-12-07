@@ -34,6 +34,15 @@
 
 %% \usepackage{xspace}
 
+
+\definecolor{languidlavender}{rgb}{0.84, 0.79, 0.87}
+
+\definecolor{lavender(floral)}{rgb}{0.71, 0.49, 0.86}
+
+\definecolor{lavenderblue}{rgb}{0.8, 0.8, 1.0}
+
+\definecolor{lavenderpurple}{rgb}{0.59, 0.48, 0.71}
+
 %% \newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
 \newcommand{\powerset}[1]{\mathcal{P}\left(#1\right)}
@@ -296,7 +305,42 @@
         \end{align*}
       \item $(7 \times 3) = 2e \to e \not\in \mathbb{Q}$
       \end{enumerate}
-    \item \todo[inline]{p57}
+    \item
+      \begin{marginfigure}
+        \begin{align*}
+          n + n &= \frac{n(n-1)}{2} \\
+          2n &= \frac{n(n - 1)}{2} \\
+          4n &= n(n-1) \\
+          4n &= n^{2} - n \\
+          0 &= n^{2} - 5n \\
+          n &= \Set{0,5}
+        \end{align*}
+      \end{marginfigure}
+
+      If $C_{n} \cong \overline{C_{n}}$, then it must be the case that \\
+      $\abs*{E(C_{n})} + \abs*{E(\overline{C_{n}})} = \abs*{E(K_{n})}$, i.e.
+      $n + n = \frac{n(n-1)}{2}$.
+
+      \vskip 1em
+      Since $n=5$ is a solution,
+      $\abs*{E(C_{5})} + \abs*{E(\overline{C_{5}})} = \abs*{E(K_{5})}$, and thus
+      $C_{5} \cong \overline{C_{5}}$. \\
+      $\hfill\square$
+
+      \vskip 1em
+      A graph with no edges ($n=0$) has no cycles.
+      Therefore the only self-complementary cycle graph is $C_{5}$. \\
+      $\hfill\square$
+
+    \item If $G \cong \overline{G}$ for a graph $G$ of order $v$, then
+      $\abs*{E(G)} + \abs*{E(\overline{G})} = \abs*{E(K_{v})}$, i.e.
+      $e + e = 2e = \frac{v(v-1)}{2}$. So the number of edges $e$ in $G$ is
+      $\frac{v(v-1)}{4}$, and $4 \mid v(v-1)$. Therefore, for any
+      self-complementary graph $G$ of order $v$, $4 \mid v$ or $4 \mid v - 1$.\\
+      $\hfill\square$
+
+    \item \todo[color=languidlavender]{Find two other self-complementary graphs
+      (Trudeau, \textit{Graph Theory} 57)}.
 \end{enumerate}
 
 \backmatter
