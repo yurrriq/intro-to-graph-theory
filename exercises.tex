@@ -2,7 +2,7 @@
 
 \hypersetup{colorlinks}
 
-\title{Introduction to Graph Theory: Exercises}
+\title{Graph Theory Exercises}
 \author{Eric Bailey}
 %% \publisher{Dover}
 
@@ -467,7 +467,250 @@
         \end{tikzpicture}
       \end{marginfigure}
 
-    \item \todo[color=languidlavender]{p59}
+    \item The graphs of Figure 46 are not isomorphic beacuse their complements
+      are nonisomorphic, as shown below. Notably, the cyan edges in one
+      complement are missing in the other.
+      \begin{figure}
+        \begin{tikzpicture}[scale=.8]
+          \SetVertexSimple
+          \SetGraphUnit{1}
+          \tikzset{VertexStyle/.style = {
+              shape = circle,
+              fill = black,
+              inner sep = 0pt,
+              outer sep = 0pt,
+              minimum size = 4pt,
+              draw}}
+          \begin{scope}[rotate=90]
+            \grEmptyCycle[RA=1,prefix=]{6}
+            \tikzstyle{EdgeStyle}=[color=violet]
+            \Edge[style={out=-85, in=-80, out looseness=1.9, in looseness=2.3}](0)(3)
+            \Edge(0)(1)
+            \Edge(0)(5)
+            \Edge(1)(2)
+            \Edge(1)(5)
+            \Edge(2)(3)
+            \Edge(2)(4)
+            \Edge(3)(4)
+            \Edge(4)(5)
+          \end{scope}
+          \begin{scope}[xshift=3cm,rotate=90]
+            \grEmptyCycle[RA=1,prefix=]{6}
+            \SetUpEdge[style={color=olive}]
+            \Edge(0)(2)
+            \Edge(0)(4)
+            \Edge(1)(3)
+            \Edge(1)(4)
+            \Edge(2)(5)
+            \Edge(3)(5)
+            \tikzstyle{EdgeStyle}=[color=cyan]
+            \Edge(1)(5)
+            \Edge(2)(4)
+          \end{scope}
+          \begin{scope}[xshift=6cm,rotate=90]
+            \grEmptyCycle[RA=1,prefix=]{6}
+            \tikzstyle{EdgeStyle}=[color=olive]
+            \Edge(0)(2)
+            \Edge(0)(4)
+            \Edge(1)(3)
+            \Edge(1)(5)
+            \Edge(2)(4)
+            \Edge(3)(5)
+            \tikzstyle{EdgeStyle}=[color=cyan]
+            \Edge(1)(4)
+            \Edge(2)(5)
+          \end{scope}
+          \begin{scope}[xshift=9cm,rotate=90]
+            \grEmptyCycle[RA=1,prefix=]{6}
+            \tikzstyle{EdgeStyle}=[color=violet]
+            \Edge(0)(1)
+            \Edge(0)(3)
+            \Edge(0)(5)
+            \Edge(1)(2)
+            \Edge(1)(4)
+            \Edge(2)(3)
+            \Edge(2)(5)
+            \Edge(3)(4)
+            \Edge(4)(5)
+          \end{scope}
+        \end{tikzpicture}
+      \end{figure}
+
+      \newpage
+    \item Drawn below are all 34 graphs having $v=5$.
+      \begin{figure*}
+        \begin{tikzpicture}[scale=.6]
+          \SetVertexSimple
+          %% \GraphInit[vstyle=Classic]
+          \SetGraphUnit{1}
+          \tikzset{VertexStyle/.style = {
+              shape = circle,
+              fill = black,
+              inner sep = 0pt,
+              outer sep = 0pt,
+              minimum size = 4pt,
+              draw}}
+          \begin{scope}
+            \grEmptyCycle[RA=1,prefix=]{5}
+          \end{scope}
+          \begin{scope}[yshift=-3cm]
+            \grComplete[RA=1,prefix=]{5}
+          \end{scope}
+          \begin{scope}[xshift=3cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edge(0)(1)
+          \end{scope}
+          \begin{scope}[xshift=3cm,yshift=-3cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(1,2,3,4,0)
+            \Edges(1,4,2,0,3,1)
+          \end{scope}
+          \begin{scope}[xshift=6cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(0,1,2)
+          \end{scope}
+          \begin{scope}[xshift=6cm,yshift=-3cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(0,2,3,4,0)
+            \Edges(4,2,1,0,3)
+          \end{scope}
+          \begin{scope}[xshift=6cm,yshift=-6cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edge(0)(1)
+            \Edge(2)(3)
+          \end{scope}
+          \begin{scope}[xshift=6cm,yshift=-9cm]
+            \grWheel[RA=1,prefix=]{5}
+          \end{scope}
+          \begin{scope}[xshift=9cm]
+            \grEmptyStar[RA=1,prefix=]{5}
+            \Edges(1,2,3)
+            \Edge(2)(4)
+          \end{scope}
+          \begin{scope}[xshift=9cm,yshift=-3cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(1,2,3)
+            \Edge(0)(4)
+          \end{scope}
+          \begin{scope}[xshift=9cm,yshift=-6cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(1,2,3,4)
+          \end{scope}
+          \begin{scope}[xshift=9cm,yshift=-9cm,rotate=-55]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(1,2,3,1)
+          \end{scope}
+          \begin{scope}[xshift=12cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(1,2,3,4,0)
+            \Edges(4,2,0,3)
+          \end{scope}
+          \begin{scope}[xshift=12cm,yshift=-3cm]
+            \grEmptyStar[RA=1,prefix=]{5}
+            \Edges(0,1,2)
+            \Edges(3,4,0,3,2,4)
+          \end{scope}
+          \begin{scope}[xshift=12cm,yshift=-6cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(0,1,2,3,4,0)
+            \Edges(2,4,1)
+          \end{scope}
+          \begin{scope}[xshift=12cm,yshift=-9cm,rotate=-55]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(1,2,3,1,4,3,0,1)
+          \end{scope}query
+          \begin{scope}[xshift=15cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \foreach \v in {1,2,3,4}{\Edge(0)(\v)};
+          \end{scope}
+          \begin{scope}[xshift=15cm,yshift=-3cm]
+            \grEmptyStar[RA=1,prefix=]{5}
+            \Edges(0,1,2,3,0)
+          \end{scope}
+          \begin{scope}[xshift=15cm,yshift=-6.5cm,rotate=45]
+            \grEmptyCycle[RA=.7,prefix=]{4}
+            \Edges(3,0,1,2)
+            \Vertex[x=.7,y=1.4]{4}
+            \Edge(4)(1)
+          \end{scope}
+          \begin{scope}[xshift=15cm,yshift=-9cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(2,3,4,2)
+            \Edge(2)(1)
+          \end{scope}
+          \begin{scope}[xshift=15cm,yshift=-12cm]
+            %% \grPath[RA=1,prefix=]{5}
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(0,1,2,3,4)
+          \end{scope}
+          \begin{scope}[xshift=15cm,yshift=-15cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(2,3,4,2)
+            \Edge(0)(1)
+          \end{scope}
+          \begin{scope}[xshift=18cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(3,0,4,2)
+            \Edges(0,2,3,4)
+          \end{scope}
+          \begin{scope}[xshift=18cm,yshift=-3cm]
+            \grEmptyStar[RA=1,prefix=]{5}
+            \Edges(0,1,4,2,3,4,0)
+          \end{scope}
+          \begin{scope}[xshift=18.5cm,yshift=-6cm]
+            \grCycle[RA=.7,prefix=]{4}
+            \Vertex[x=-2,y=0]{4}
+            \Edge(1)(3)
+            \Edge(4)(2)
+          \end{scope}
+          \begin{scope}[xshift=18.5cm,yshift=-9cm]
+            \grCycle[RA=.7,prefix=]{4}
+            \Vertex[x=-2,y=0]{4}
+            \Edges(4,2,0)
+          \end{scope}
+          \begin{scope}[xshift=18cm,yshift=-12cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(0,2,1,0,4,3,2,0)
+          \end{scope}
+          \begin{scope}[xshift=18cm,yshift=-15cm]
+            \grEmptyStar[RA=1,prefix=]{5}
+            \Edges(0,1,2,3,0,4,2)
+          \end{scope}
+          \begin{scope}[xshift=21cm,yshift=.5cm,rotate=225]
+            \grEmptyCycle[RA=.7,prefix=]{4}
+            \Vertex[x=1.4,y=.7]{4}
+            \Edges(0,1,2,3,0,4)
+          \end{scope}
+          \begin{scope}[xshift=21cm,yshift=-4cm,rotate=90]
+            \grCycle[RA=.7,prefix=]{3}
+            \Vertices[dir=\EA,x=1.4,y=0,unit=.7]{line}{3,4}
+            \Edges(4,3,0)
+          \end{scope}
+          \begin{scope}[xshift=21cm,yshift=-6cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(1,2,0,1)
+            \Edge(2)(3)
+            \Edge(0)(4)
+          \end{scope}
+          \begin{scope}[xshift=21cm,yshift=-9cm]
+            \grEmptyCycle[RA=1,prefix=]{5}
+            \Edges(0,1,4,3,1,2)
+          \end{scope}
+          \begin{scope}[xshift=20.75cm,yshift=-12cm,rotate=180]
+            \grCycle[RA=.7,prefix=]{4}
+            \Vertex[x=-1.75,y=0]{4}
+            \Edge(1)(3)
+          \end{scope}
+          \begin{scope}[xshift=21cm,yshift=-15cm]
+            \grCycle[RA=1,prefix=]{5}
+          \end{scope}
+        \end{tikzpicture}
+      \end{figure*}
+
+    \item \todo[color=languidlavender]{There are an odd number of nonisomorphic
+      graphs with $v=4$. Is this special? Are there other values of $v$ for
+      which the number of nonisomorphic graphs is also odd? (Trudeau, \textit{Graph Theory} 59).
+    \url{https://math.stackexchange.com/questions/86790/is-there-a-reason-why-the-number-of-non-isomorphic-graphs-with-v-4-is-odd}}
 
 \end{enumerate}
 
