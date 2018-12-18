@@ -1,0 +1,40 @@
+\label{ch2ex:22}
+
+\begin{figure}
+  \caption{The seven \gls{nonisomorphic} subgraphs of $K_{3}$}
+  \begin{tikzpicture}[scale=.5]
+    \SetVertexSimple
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+
+    \begin{scope}
+      \grComplete[RA=1]{3}
+    \end{scope}
+    \begin{scope}[xshift=3cm]
+      \Vertices{circle}{a,b,c}
+      \Edges(a,b,c)
+    \end{scope}
+    \begin{scope}[xshift=6cm]
+      \Vertices{circle}{a,b,c}
+      \Edges(a,b)
+    \end{scope}
+    \begin{scope}[xshift=9cm]
+      \Vertices{circle}{a,b,c}
+    \end{scope}
+    \begin{scope}[xshift=13cm]
+      \Vertices{circle}{a,b}
+      \Edges(a,b)
+    \end{scope}
+    \begin{scope}[xshift=17cm]
+      \Vertices{circle}{a,b}
+    \end{scope}
+    \begin{scope}[xshift=20.5cm]
+      \Vertex{a}
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}

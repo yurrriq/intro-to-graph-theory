@@ -1,0 +1,85 @@
+\label{ch2ex:28}
+\begin{figure}
+  \begin{tikzpicture}[scale=.6]
+    %% \GraphInit[vstyle=Classic]
+    \SetVertexSimple
+    \SetGraphUnit{2}
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+    \begin{scope}[rotate=90]
+      \grEmptyCycle[RA=2,prefix=a]{7}
+      \foreach \n in {1,2,5,6}{\Edge(a0)(a\n)};
+      \foreach \n in {0,2,3,6}{\Edge(a1)(a\n)};
+      \foreach \n in {0,1,3,4}{\Edge(a2)(a\n)};
+      \foreach \n in {1,2,4,5}{\Edge(a3)(a\n)};
+      \foreach \n in {2,3,5,6}{\Edge(a4)(a\n)};
+      \foreach \n in {0,3,4,6}{\Edge(a5)(a\n)};
+      \foreach \n in {0,1,4,5}{\Edge(a6)(a\n)};
+      \AddVertexColor{magenta}{a1}
+      \AddVertexColor{orange}{a0}
+      \AddVertexColor{yellow}{a2}
+      \AddVertexColor{lime}{a6}
+      \AddVertexColor{cyan}{a3}
+      \AddVertexColor{purple}{a5}
+      \AddVertexColor{violet}{a4}
+    \end{scope}
+    \begin{scope}[xshift=4cm,yshift=-5cm,rotate=90]
+      %% \grEmptyCycle[RA=2,prefix=c]{7}
+      \Vertices{circle}{c1,c3,c5,c6,c4,c2,c0}
+      \foreach \n in {1,2,3,4}{\Edge(c0)(c\n)};
+      \foreach \n in {0,2,3,5}{\Edge(c1)(c\n)};
+      \foreach \n in {0,1,4,6}{\Edge(c2)(c\n)};
+      \foreach \n in {0,1,5,6}{\Edge(c3)(c\n)};
+      \foreach \n in {0,2,5,6}{\Edge(c4)(c\n)};
+      \foreach \n in {1,3,4,6}{\Edge(c5)(c\n)};
+      \foreach \n in {2,3,4,5}{\Edge(c6)(c\n)};
+      \AddVertexColor{magenta}{c0}
+      \AddVertexColor{orange}{c1}
+      \AddVertexColor{yellow}{c2}
+      \AddVertexColor{lime}{c3}
+      \AddVertexColor{cyan}{c4}
+      \AddVertexColor{purple}{c5}
+      \AddVertexColor{violet}{c6}
+    \end{scope}
+    \begin{scope}[xshift=8cm,rotate=90]
+      \grEmptyCycle[RA=2,prefix=b]{7}
+      \foreach \n in {1,3,4,6}{\Edge(b0)(b\n)};
+      \foreach \n in {0,2,4,5}{\Edge(b1)(b\n)};
+      \foreach \n in {1,3,5,6}{\Edge(b2)(b\n)};
+      \foreach \n in {0,2,4,6}{\Edge(b3)(b\n)};
+      \foreach \n in {0,1,3,5}{\Edge(b4)(b\n)};
+      \foreach \n in {1,2,4,6}{\Edge(b5)(b\n)};
+      \foreach \n in {0,2,3,5}{\Edge(b6)(b\n)};
+      \AddVertexColor{magenta}{b5}
+      \AddVertexColor{orange}{b2}
+      \AddVertexColor{yellow}{b1}
+      \AddVertexColor{lime}{b6}
+      \AddVertexColor{cyan}{b4}
+      \AddVertexColor{purple}{b3}
+      \AddVertexColor{violet}{b0}
+    \end{scope}
+    \begin{scope}
+      \SetUpEdge[style=<->]
+      \Edge[color=magenta,style={out=65, in=100, out looseness=1.3}](a1)(c0)
+      \Edge[color=magenta, style={out=10, in=-100}](c0)(b5)
+      \Edge[color=orange, style={out=10, in=110}](a0)(c1)
+      \Edge[color=orange](c1)(b2)
+      \Edge[color=gray,style={out=-90,in=-100,out looseness=1.6, in looseness=1.4}](a2)(c2)
+      \Edge[color=gray](c2)(b1)
+      \Edge[color=lime, style={out=-30,in=90}](a6)(c3)
+      \Edge[color=lime, style={out=80,in=120}](c3)(b6)
+      \Edge[color=cyan, style={out=-90,in=-135}](a3)(c4)
+      \Edge[color=cyan, style={out=20,in=-135}](c4)(b4)
+      \Edge[color=purple](a5)(c5)
+      \Edge[color=purple,style={out=90,in=-200, out looseness=3}](c5)(b3)
+      \Edge[color=violet,style={out=-90,in=-180}](a4)(c6)
+      \Edge[color=violet,style={out=-30,in=5,out looseness=1.2, in looseness=1.5}](c6)(b0)
+    \end{scope}
+  \end{tikzpicture}
+  \caption{A pair of isomorphic graphs and their shared canonization}
+\end{figure}

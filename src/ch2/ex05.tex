@@ -1,0 +1,52 @@
+The first five \glspl{path graph}.
+
+\begin{figure*}
+  \begin{tikzpicture}[scale=.4]
+    \SetVertexSimple
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+
+    \begin{scope}
+      \grPath[RA=2]{2}
+      \draw (1,-1.5) node {$P_{2}$};
+    \end{scope}
+
+    \begin{scope}[xshift=4cm]
+      \grPath[RA=2]{3}
+      \draw (2,-1.5) node {$P_{3}$};
+    \end{scope}
+
+    \begin{scope}[xshift=10cm]
+      \grPath[RA=2]{4}
+      \draw (3,-1.5) node {$P_{4}$};
+    \end{scope}
+
+    \begin{scope}[xshift=18cm]
+      \grPath[RA=2]{5}
+      \draw (4,-1.5) node {$P_{5}$};
+    \end{scope}
+
+    \begin{scope}[xshift=28cm]
+      \grPath[RA=2]{6}
+      \draw (5,-1.5) node {$P_{6}$};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure*}
+
+\begin{align*}
+  V(P_{v})        &= \Set{ 1, 2, ..., v } \\
+  E(P_{v})        &= \Set{ \Set{n-1,n} \colon n \in \Set{ 2, ..., v } } \\
+  \abs*{E(P_{v})} &= v - 1 \\
+  e               &= v - 1
+\end{align*}
+$\hfill\square$
+
+\marginnote[-6em]{%
+  The number of edges in a \gls{path graph} $P_{v}$, where $v \ge 2$, is
+  given by the formula $e = v - 1$.%
+}

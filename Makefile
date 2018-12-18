@@ -8,24 +8,15 @@ all: docs
 docs:
 	@ install -m755 $$(nix-build -A drv --no-out-link)/* -Dt $@/
 else
-.PHONY: clean clobber watch
-
-LATEXMKFLAGS := -pdfxe -Werror
-ifneq (,$(findstring B,${MAKEFLAGS}))
-LATEXMKFLAGS += -gg
+all:
+	@ ${MAKE} -BC src ${MAKEFLAGS}
 endif
 
-%.pdf: %.tex
-	@ latexmk ${LATEXMKFLAGS} $*
 
-all: exercises.pdf
-
-clean:
-	@ latexmk -c
-
-clobber:
-	@ latexmk -C
-
-watch:
-	@ latexmk ${LATEXMKFLAGS} -pvc -new-viewer- exercises
-endif
+%.json: branch=$(shell <$@ jq -r .branch)
+%.json: owner=$(shell <$@ jq -r .owner)
+%.json: repo=$(shell <$@ jq -r .repo)
+%.json: rev=$(shell http "https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${branch}" Accept:application/vnd.github.v3+json | jq -r '.object.sha')
+%.json: sha256=$(shell nix-prefetch-url --unpack "https://github.com/${owner}/${repo}/tarball/${rev}")
+*.json:
+	@ jq '.rev = "${rev}" | .sha256 = "${sha256}"' "$@" | sponge "$@"

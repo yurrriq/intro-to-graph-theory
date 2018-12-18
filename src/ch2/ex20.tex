@@ -1,0 +1,34 @@
+\label{ch2ex:20}
+The first graph in Figure 35 contains a subgraph
+
+\begin{figure}
+  \begin{tikzpicture}[scale=.7]
+    \SetVertexSimple
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+
+    \begin{scope}
+      \Vertex[x=-1.5,y=1.5]{A}
+      \Vertex[x=1.5,y=1.5]{B}
+      \Vertex[x=1.5,y=-1.5]{H}
+      \Vertex[x=-1.5,y=-1.5]{G}
+      \Vertex[x=-.75,y=-.75]{E}
+      \Vertex[x=.75,y=-.75]{F}
+      \Vertex[x=.75,y=.75]{D}
+      \Vertex[x=-.75,y=.75]{C}
+      \Edges(C,A,B,H,G,E,F,D,C,A)
+    \end{scope}
+    \draw (2,0) node {${\huge \cong}$};
+    \begin{scope}[xshift=4.2cm]
+      \grCycle[RA=1.5]{8}
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}
+
+which is isomorphic to $C_{8}$, whereas the second graph contains no subgraph
+isomorphic to $C_{8}$. Therefore, the two graphs are not isomorphic.

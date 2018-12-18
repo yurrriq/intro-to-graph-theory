@@ -1,0 +1,52 @@
+\label{ch2ex:9}
+
+If a graph $G$ has $v=6$ then $G$ or $\overline{G}$
+(possibly both) has a subgraph isomorphic to $K_{3}$.
+
+In the graph $G$ or $\overline{G}$ there exists a vertex $a$ of degree three
+or more. Let there be three adjacent vertices $b$, $c$, and $d$. If any of
+the edges $\Set{b,c}$, $\Set{b,d}$, or $\Set{c,d}$ are present in the graph,
+then the graph contains a subgraph isomorphic to $K_{3}$. If none of those
+edges is present, then they are all present in the other graph, which thus
+contains a subgraph isomorphic to $K_{3}$.
+
+\begin{figure}
+  \begin{tikzpicture}[scale=.8]
+    \SetVertexSimple
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+
+    \begin{scope}
+      \Vertices{circle}{a,b,c,d,e,f}
+      \Edge(a)(d)
+      \SetUpEdge[color=violet,style={ultra thick}]
+      \Edge(a)(b) \Edge(a)(c) \Edge(b)(c)
+    \end{scope}
+
+    \begin{scope}[xshift=3.5cm]
+      \Vertices{circle}{a,b,c,d,e,f}
+      \Edge(a)(c)
+      \SetUpEdge[color=violet,style={ultra thick}]
+      \Edges(a,d,b,a)
+    \end{scope}
+
+    \begin{scope}[xshift=7cm]
+      \Vertices{circle}{a,b,c,d,e,f}
+      \Edge(a)(b)
+      \SetUpEdge[color=violet,style={ultra thick}]
+      \Edges(a,d,c,a)
+    \end{scope}
+
+    \begin{scope}[xshift=10.5cm]
+      \Vertices{circle}{a,b,c,d,e,f}
+      \Edge(a)(b) \Edge(a)(c) \Edge(a)(d)
+      \SetUpEdge[color=violet,style={ultra thick}]
+      \Edges(b,c,d,b)
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}

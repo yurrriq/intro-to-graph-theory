@@ -43,6 +43,17 @@ with import nixpkgs {
   ];
 };
 
+let
+
+  my-ghc = haskellPackages.ghcWithPackages (hpkgs: with hpkgs; [
+    algebraic-graphs
+    # algebraic-graphs_0_3
+    # containers
+    # hgal
+  ]);
+
+in
+
 {
 
   drv = stdenv.mkDerivation rec {
@@ -55,7 +66,7 @@ with import nixpkgs {
     ];
 
     installPhase = ''
-      install -Dm755 exercises.pdf "$out/exercises.pdf"
+      install -Dm755 src/exercises.pdf "$out/exercises.pdf"
     '';
 
     meta = with stdenv.lib; {
@@ -74,6 +85,8 @@ with import nixpkgs {
   shell = mkShell {
     buildInputs = [
       gnumake
+      hlint
+      my-ghc
       qpdfview
       xelatex
     ];

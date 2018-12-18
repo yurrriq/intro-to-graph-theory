@@ -1,0 +1,39 @@
+\label{ch2ex:21}
+\begin{figure*}
+  \caption{The 17 unequal subgraphs of $K_{3}$}
+  \begin{tikzpicture}[scale=.5]
+    \GraphInit[vstyle=Classic]
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+
+    \begin{scope}\Vertex{a}\end{scope}
+    \begin{scope}[yshift=-2.5cm]\Vertex{b}\end{scope}
+    \begin{scope}[yshift=-5cm]\Vertex{c}\end{scope}
+
+    \begin{scope}[xshift=4cm]\Vertices{circle}{b,a}\end{scope}
+    \begin{scope}[xshift=4cm,yshift=-2.5cm]\Vertices{circle}{c,b}\end{scope}
+    \begin{scope}[xshift=4cm,yshift=-5cm]\Vertices{circle}{c,a}\end{scope}
+
+    \begin{scope}[xshift=9cm]\Vertices{circle}{b,a}\Edges(b,a)\end{scope}
+    \begin{scope}[xshift=9cm,yshift=-2.5cm]\Vertices{circle}{c,b}\Edges(c,b)\end{scope}
+    \begin{scope}[xshift=9cm,yshift=-5cm]\Vertices{circle}{c,a}\Edges(c,a)\end{scope}
+
+    \begin{scope}[xshift=13cm]\Vertices{circle}{a,b,c}\end{scope}
+    \begin{scope}[xshift=13cm,yshift=-4.5cm]\Vertices{circle}{a,b,c}\Edges(a,b,c,a)\end{scope}
+
+    \begin{scope}[xshift=17cm]\Vertices{circle}{a,b,c}\Edges(a,b)\end{scope}
+    \begin{scope}[xshift=17cm,yshift=-4.5cm]\Vertices{circle}{a,b,c}\Edges(a,c)\end{scope}
+
+    \begin{scope}[xshift=21cm]\Vertices{circle}{a,b,c}\Edges(b,c)\end{scope}
+    \begin{scope}[xshift=21cm,yshift=-4.5cm]\Vertices{circle}{a,b,c}\Edges(a,b,c)\end{scope}
+
+    \begin{scope}[xshift=25cm]\Vertices{circle}{a,b,c}\Edges(b,c,a)\end{scope}
+    \begin{scope}[xshift=25cm,yshift=-4.5cm]\Vertices{circle}{a,b,c}\Edges(c,b,a)\end{scope}
+
+  \end{tikzpicture}
+\end{figure*}

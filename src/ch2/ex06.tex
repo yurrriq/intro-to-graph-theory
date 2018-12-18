@@ -1,0 +1,59 @@
+\begin{figure*}
+  \caption{The first five \glspl{wheel graph}.}
+  \begin{tikzpicture}[scale=.5]
+    \SetVertexSimple
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+
+    \begin{scope}[rotate=90]
+      \grWheel[RA=2]{4}
+      \draw (2,1.5) node {$W_{4}$};
+    \end{scope}
+
+    \begin{scope}[xshift=5cm]
+      \grWheel[RA=2]{5}
+      \draw (-1.5,2) node {$W_{5}$};
+    \end{scope}
+
+    \begin{scope}[xshift=10cm,rotate=90]
+      \grWheel[RA=2]{6}
+      \draw (2,1.5) node {$W_{6}$};
+    \end{scope}
+
+    \begin{scope}[xshift=15cm,rotate=90]
+      \grWheel[RA=2]{7}
+      \draw (2.5,1.5) node {$W_{7}$};
+    \end{scope}
+
+    \begin{scope}[xshift=20cm,rotate=90]
+      \grWheel[RA=2]{8}
+      \draw (2.5,1.5) node {$W_{8}$};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure*}
+
+\begin{equation*}
+  \begin{split}
+    V(W_{v})        &= \Set{ 1, 2, 3, ..., v } \\
+    E(W_{v})        &= \{\ \Set{1,2}, \Set{1,3}, ..., \Set{1,v}, \\
+    & \qquad \Set{2,3}, \Set{3,4}, ..., \Set{v-1,v}, \\
+    & \qquad \Set{v,2}\ \} \\
+    &= \{\ \Set{ \Set{1,n} \colon n \in \Set{2,...,v} }, \\
+    & \qquad \Set{ \Set{n-1,n} \colon n \in \Set{3,...,v} }, \\
+    & \qquad \Set{v,2}\ \} \\
+    \abs*{E(W_{v})} &= (v-1) + (v-2) + 1 \\
+    & = (v-1) + (v-1) \\
+    e               & = 2(v-1)
+  \end{split}
+\end{equation*}
+$\hfill\square$
+
+\marginnote[-11em]{%
+  The number of edges in the \gls{wheel graph} on $v$ vertices $W_{v}$,
+  where $v \ge 4$, is given by the formula $e = 2(v - 1)$.%
+}

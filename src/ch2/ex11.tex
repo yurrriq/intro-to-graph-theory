@@ -1,0 +1,12 @@
+\label{ch2ex:11}
+\begin{align}
+  2\abs{\emptyset} &= \sum_{v \in V} deg(v) = 0 \tag{BC} \\
+  G(V,E) \to 2\abs{E} &= \sum_{v \in V} deg(v) \tag{IH} \\
+  H(V^{\prime}, E^{\prime}), \abs{E^{\prime}} &= \abs{E} + 1 \\
+  \exists\ H_{0}(V^{\prime}, E^{\prime}_{0}), \abs{E^{\prime}_{0}} &= \abs{E} \\
+  2\abs{E^{\prime}_{0}} &= \sum_{v \in V^{\prime}} deg(v) \tag{by IH}\\
+  H &\cong (V^{\prime}, E_{0}^{\prime} \cup \Set{e}), e \not\in E_{0}^{\prime} \\
+  \sum_{v \in V^{\prime}} deg(v) + 2 &= 2\abs{E} \\
+  2\abs{E} + 2 = 2(\abs{E} + 1) &= \sum_{v \in V^{\prime}} deg(v)
+\end{align}
+$\hfill\square$

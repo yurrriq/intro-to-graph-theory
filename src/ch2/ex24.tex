@@ -1,0 +1,29 @@
+\label{ch2ex:24}
+
+The graphs of Figure 31 are not isomorphic because their complements have
+different degree distributions: the first has one vertex of degree 2, two of
+degree 1, and four of degree 0, whereas the second has four of degree 1, and
+three of degree 0.
+
+\begin{marginfigure}[-5em]
+  \begin{tikzpicture}[scale=.8]
+    \SetVertexSimple
+    \tikzset{VertexStyle/.style = {
+        shape = circle,
+        fill = black,
+        inner sep = 0pt,
+        outer sep = 0pt,
+        minimum size = 4pt,
+        draw}}
+    \begin{scope}
+      \grEmptyCycle[RA=1,prefix=]{7}
+      \Edges(0,4)
+      \Edges(1,4)
+    \end{scope}
+    \begin{scope}[xshift=3cm]
+      \grEmptyCycle[RA=1,prefix=]{7}
+      \Edges(0,5)
+      \Edges(1,3)
+    \end{scope}
+  \end{tikzpicture}
+\end{marginfigure}
